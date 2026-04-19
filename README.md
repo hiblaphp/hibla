@@ -278,6 +278,49 @@ If you have questions, ideas, want to be a maintainer, or just want to talk asyn
 - Reddit: [u/rcalicdan](https://www.reddit.com/user/rcalicdan/)
 ---
 
+## Support & Sponsorship
+
+Hibla is a passion project built and maintained in my own time. It is completely free and open source, and I intend to keep it that way. That said, building and maintaining a full async ecosystem is a significant ongoing effort, and any support goes a long way toward keeping it alive, well-documented, and actively developed.
+
+If Hibla has saved you time, helped your team ship something, or simply sparked your interest in async PHP, please consider supporting the project.
+
+- **GitHub Sponsors (Personal):** [github.com/sponsors/rcalicdan](https://github.com/sponsors/rcalicdan)
+- **GitHub Sponsors (Hibla):** [github.com/sponsors/hiblaphp](https://github.com/sponsors/hiblaphp)
+
+Every contribution, no matter the size, is genuinely appreciated.
+
+---
+
+### Sponsors
+
+Hibla is proudly supported by the following companies and individuals. If your company uses Hibla in production or wants to support the async PHP ecosystem, sponsoring the project is a great way to get visibility while directly funding its development. Reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com) to discuss sponsorship tiers.
+
+#### Gold Sponsors
+
+<p>
+  <a href="YOUR_SPONSOR_LINK">
+    <img src="YOUR_SPONSOR_LOGO" alt="Your Company" height="60" />
+  </a>
+</p>
+
+#### Silver Sponsors
+
+<p>
+  <a href="YOUR_SPONSOR_LINK">
+    <img src="YOUR_SPONSOR_LOGO" alt="Your Company" height="40" />
+  </a>
+</p>
+
+#### Community Backers
+
+<p>
+  <a href="YOUR_SPONSOR_LINK">
+    <img src="YOUR_SPONSOR_LOGO" alt="Your Company" height="28" />
+  </a>
+</p>
+
+*Your logo could be here. [Become a sponsor.](mailto:reymart.calicdan06@gmail.com)*
+
 ## License
 
 The Hibla Ecosystem is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
