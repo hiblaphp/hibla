@@ -1,0 +1,40 @@
+{
+    "name": "hiblaphp/hibla",
+    "description": "The Hibla Asynchronous Ecosystem: A unified, Fiber-native stack for modern PHP 8.4+",
+    "type": "metapackage",
+    "license": "MIT",
+    "keywords": [
+        "async",
+        "fiber",
+        "hiblaphp",
+        "event-loop",
+        "mysql",
+        "http-client",
+        "parallel",
+        "erlang-php"
+    ],
+    "authors": [
+        {
+            "name": "Reymart A. Calicdan",
+            "email": "reymart.calicdan06@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "hiblaphp/event-loop": "^1.0",
+        "hiblaphp/promise": "^1.0",
+        "hiblaphp/async": "^1.0",
+        "hiblaphp/cancellation": "^1.0",
+        "hiblaphp/stream": "^1.0",
+        "hiblaphp/socket": "^1.0",
+        "hiblaphp/dns": "^1.0",
+        "hiblaphp/http-client": "^1.0",
+        "hiblaphp/mysql": "^1.0",
+        "hiblaphp/parallel": "^1.0",
+        "hiblaphp/sql": "^1.0",
+        "hiblaphp/sync": "^1.0",
+        "hiblaphp/cache": "^1.0"
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}
