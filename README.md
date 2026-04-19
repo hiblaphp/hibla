@@ -51,7 +51,7 @@ The goal is simple: async PHP should feel as productive and readable as the sync
 
 Hibla did not emerge from a vacuum. It is the product of lessons learned from a decade of async programming across languages, runtimes, and libraries. I owe a significant intellectual debt to the communities and individuals who proved these ideas before I ever wrote a line of PHP.
 
-I want to be completely: **Hibla would not exist without ReactPHP.**
+I want to be completely honest: **Hibla would not exist without ReactPHP.**
 
 ReactPHP did not merely inspire Hibla. It *proved* that the entire premise was possible. At a time when the PHP community largely dismissed the idea of a non-blocking, event-driven PHP runtime as a curiosity or an anti-pattern, the ReactPHP team built a complete, production-grade async ecosystem from the ground up. The event loop, the promise model, the stream abstraction, the DNS resolution pipeline, the socket layer... ReactPHP had all of it, years before native Fibers existed. The architecture of `hiblaphp/event-loop`, `hiblaphp/socket`, `hiblaphp/dns`, and `hiblaphp/stream` is directly and consciously modeled after the design decisions of the ReactPHP core team. I studied their code, internalized their tradeoffs, and built on top of the conceptual foundation they laid. If you use Hibla and it feels right, a large portion of that credit belongs to them.
 
