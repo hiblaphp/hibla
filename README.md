@@ -270,8 +270,12 @@ If you find a bug or have an architectural suggestion, please open an issue in t
 
 Hibla is designed, built, and maintained by **Reymart A. Calicdan**.
 
-If you have questions, ideas, or just want to talk async PHP, feel free to reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com).
+If you have questions, ideas, want to be a maintainer, or just want to talk async PHP, feel free to reach out through any of the channels below:
 
+- Email: [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com)
+- X: [@rcalicdan06](https://x.com/rcalicdan06)
+- Mastodon: [@rcalicdan@phpc.social](https://phpc.social/@rcalicdan)
+- Reddit: [u/rcalicdan](https://www.reddit.com/user/rcalicdan/)
 ---
 
 ## License
