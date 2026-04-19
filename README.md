@@ -8,8 +8,6 @@
 
 Hibla is a complete, bottom-up asynchronous stack designed exclusively for the modern PHP Fiber era. It provides a highly predictable, fault-tolerant, and memory-safe environment for building high-concurrency CLI applications, background workers, scrapers, and network daemons.
 
-Instead of adapting legacy callback or promise-chaining patterns, Hibla provides a unified **Structured Concurrency** model that reads like synchronous top-to-bottom PHP, while running cooperatively on a high-performance event loop (`stream_select` or `libuv`).
-
 ---
 
 ## Why Hibla?
@@ -28,6 +26,24 @@ A common question when releasing a new tool is: *"Why not contribute to existing
 Hibla is not an attempt to fragment the ecosystem. It is an exploration of a **generational leap**. Existing frameworks carry the necessary weight of a decade of backward compatibility. Hibla is an experiment in starting fresh: *What if I built an entire ecosystem from the ground up, exclusively for PHP 8.4+, assuming native Fibers, strict typing, and property hooks from day one?*
 
 I believe that exploring entirely new architectures, like out-of-band database cancellation and Erlang-style process supervision, creates healthy competition that pushes the entire PHP language forward. Choice is a sign of a maturing ecosystem.
+
+---
+
+## A First-Class Developer Experience
+
+Performance and correctness are important, but they mean very little if the day-to-day experience of writing code feels like a chore. Hibla treats **Developer Experience (DX) as a first-class concern**, not an afterthought.
+
+This is most visible in the areas where PHP developers spend most of their time:
+
+**HTTP.** The `hiblaphp/http-client` is designed to feel immediately familiar. Making a request, streaming a response, handling Server-Sent Events, or wiring up interceptors should read cleanly and require as little boilerplate as possible. There is also a dedicated `hiblaphp/http-client-testing` package so that HTTP interactions in your application are fully simulatable in your test suite without spinning up a real server.
+
+**Databases.** Working with MySQL through `hiblaphp/mysql` should feel as natural as any synchronous database library, with the added guarantee that connection pooling, statement caching, and cancellation are all handled for you at the driver level. You should not have to think about acquiring connections, killing orphaned queries, or resetting connection state between requests. Hibla handles all of that quietly in the background.
+
+**Process Pools.** Spawning and managing worker processes for CPU-heavy work should not require you to understand Unix signals, pipe management, or IPC serialization at a deep level. `hiblaphp/parallel` exposes a simple, high-level API: define a pool size, submit work, and await results. The supervision, respawning, and error recovery all happen automatically.
+
+**Async Primitives.** The building blocks of concurrency (`async`, `await`, `Promise`, `CancellationToken`, `Mutex`, `Semaphore`) are designed to compose naturally. You should be able to read a piece of concurrent Hibla code top-to-bottom and understand what it does without needing to trace through layers of callbacks or promise chains. If a piece of the API feels awkward or verbose, that is considered a bug worth fixing.
+
+The goal is simple: async PHP should feel as productive and readable as the synchronous PHP you already know, just faster.
 
 ---
 
@@ -254,7 +270,7 @@ If you find a bug or have an architectural suggestion, please open an issue in t
 
 Hibla is designed, built, and maintained by **Reymart A. Calicdan**.
 
-If you have questions, ideas, just want to talk async PHP, or want to be a maintainer, feel free to reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com).
+If you have questions, ideas, or just want to talk async PHP, feel free to reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com).
 
 ---
 
