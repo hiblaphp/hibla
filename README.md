@@ -244,10 +244,11 @@ The Hibla ecosystem is currently in **Public Beta**.
 
 The architecture is stable, heavily stress-tested, and currently being dogfooded in production environments. I am gathering community feedback on the DX (Developer Experience) and API ergonomics before tagging a stable `1.0.0` release.
 
-### What's Next (Phase 2)?
+### What's Next (Phase 2)
 
-- **`hiblaphp/postgres`**: A native PostgreSQL binary protocol driver mirroring the MySQL architecture, with the same out-of-band `pg_cancel_backend()` cancellation guarantee and lazy check-on-borrow connection pooling.
-- **`hiblaphp/http-server`**: A Fiber-native web server built directly on the Hibla Engine to serve HTTP/1.1 and HTTP/2 traffic without relying on external PHP SAPIs.
+- **`hiblaphp/postgres`:** An Async PostgreSQL client with cancellation guarantee and lazy check-on-borrow connection pooling.
+- **`hiblaphp/http-server`:** A Fiber-native web server built directly on the Hibla Engine to serve HTTP/1.1 and HTTP/2 traffic without relying on external PHP SAPIs.
+- **`hiblaphp/query-builder`:** A database-agnostic async query builder that sits on top of the MySQL and PostgreSQL drivers, with a fluent API and full support for parameterized queries.
 
 ### On the Horizon (Phase 3)
 
