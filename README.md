@@ -295,31 +295,21 @@ Every contribution, no matter the size, is genuinely appreciated.
 
 Hibla is proudly supported by the following companies and individuals. If your company uses Hibla in production or wants to support the async PHP ecosystem, sponsoring the project is a great way to get visibility while directly funding its development. Reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com) to discuss sponsorship tiers.
 
+### Sponsors
+
+Sponsoring Hibla is a great way to get visibility for your company while directly funding the async PHP ecosystem. Reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com) to discuss sponsorship tiers.
+
 #### Gold Sponsors
 
-<p>
-  <a href="YOUR_SPONSOR_LINK">
-    <img src="YOUR_SPONSOR_LOGO" alt="Your Company" height="60" />
-  </a>
-</p>
+*No gold sponsors yet. [Your logo could be here.](mailto:reymart.calicdan06@gmail.com)*
 
 #### Silver Sponsors
 
-<p>
-  <a href="YOUR_SPONSOR_LINK">
-    <img src="YOUR_SPONSOR_LOGO" alt="Your Company" height="40" />
-  </a>
-</p>
+*No silver sponsors yet. [Your logo could be here.](mailto:reymart.calicdan06@gmail.com)*
 
 #### Community Backers
 
-<p>
-  <a href="YOUR_SPONSOR_LINK">
-    <img src="YOUR_SPONSOR_LOGO" alt="Your Company" height="28" />
-  </a>
-</p>
-
-*Your logo could be here. [Become a sponsor.](mailto:reymart.calicdan06@gmail.com)*
+*No community backers yet. [Your logo could be here.](mailto:reymart.calicdan06@gmail.com)*
 
 ## License
 
