@@ -292,33 +292,26 @@ Every contribution, no matter the size, is genuinely appreciated.
 
 ---
 
-### Sponsors
+## Support & Sponsorship
 
-Hibla is proudly supported by the following companies and individuals. If your company uses Hibla in production or wants to support the async PHP ecosystem, sponsoring the project is a great way to get visibility while directly funding its development. Reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com) to discuss sponsorship tiers.
+Hibla is a passion project built and maintained in my own time. It is completely free and open source, and I intend to keep it that way. That said, building and maintaining a full async ecosystem is a significant ongoing effort, and any support goes a long way toward keeping it alive, well-documented, and actively developed.
 
-### Sponsors
+If Hibla has saved you time, helped your team ship something, or simply sparked your interest in async PHP, please consider supporting the project.
 
-Sponsoring Hibla is a great way to get visibility for your company while directly funding the async PHP ecosystem. Reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com) to discuss sponsorship tiers.
+- **GitHub Sponsors (Personal):** [github.com/sponsors/rcalicdan](https://github.com/sponsors/rcalicdan)
+- **GitHub Sponsors (Hibla):** [github.com/sponsors/hiblaphp](https://github.com/sponsors/hiblaphp)
 
-#### Principal Sponsors
+Every contribution, no matter the size, is genuinely appreciated.
 
-*No principal sponsors yet. [Your logo could be here.](mailto:reymart.calicdan06@gmail.com)*
+---
 
-#### Platinum Sponsors
+## Sponsors and Partners
 
-*No platinum sponsors yet. [Your logo could be here.](mailto:reymart.calicdan06@gmail.com)*
+Hibla is proudly supported by the following companies and individuals. If your company uses Hibla in production or wants to support the async PHP ecosystem, reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com) to discuss sponsorship.
 
-#### Gold Sponsors
-
-*No gold sponsors yet. [Your logo could be here.](mailto:reymart.calicdan06@gmail.com)*
-
-#### Silver Sponsors
-
-*No silver sponsors yet. [Your logo could be here.](mailto:reymart.calicdan06@gmail.com)*
-
-#### Community Backers
-
-*No community backers yet. [Your name could be here.](mailto:reymart.calicdan06@gmail.com)*
+<a href="https://baldbold.eu/" title="Baldbold.eu">
+  <img src="arts/sponsors/baldbold.png" height="60" alt="Baldbold.eu" style="margin-right: 16px">
+</a>
 
 ## License
 
