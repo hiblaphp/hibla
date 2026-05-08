@@ -277,19 +277,7 @@ If you have questions, ideas, want to be a maintainer, or just want to talk asyn
 - X: [@rcalicdan06](https://x.com/rcalicdan06)
 - Mastodon: [@rcalicdan@phpc.social](https://phpc.social/@rcalicdan)
 - Reddit: [u/rcalicdan](https://www.reddit.com/user/rcalicdan/)
----
-
-## Support & Sponsorship
-
-Hibla is a passion project built and maintained in my own time. It is completely free and open source, and I intend to keep it that way. That said, building and maintaining a full async ecosystem is a significant ongoing effort, and any support goes a long way toward keeping it alive, well-documented, and actively developed.
-
-If Hibla has saved you time, helped your team ship something, or simply sparked your interest in async PHP, please consider supporting the project.
-
-- **GitHub Sponsors (Personal):** [github.com/sponsors/rcalicdan](https://github.com/sponsors/rcalicdan)
-- **GitHub Sponsors (Hibla):** [github.com/sponsors/hiblaphp](https://github.com/sponsors/hiblaphp)
-
-Every contribution, no matter the size, is genuinely appreciated.
-
+  
 ---
 
 ## Support & Sponsorship
