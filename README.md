@@ -49,7 +49,10 @@ The goal is simple: async PHP should feel as productive and readable as the sync
 
 ## Acknowledgements
 
-Hibla did not emerge from a vacuum. It is the product of lessons learned from a decade of async programming across languages, runtimes, and libraries. I owe a significant intellectual debt to the communities and individuals who proved these ideas before I ever wrote a line of PHP.
+Hibla did not emerge from a vacuum. It is the product of lessons drawn from
+a decade of async programming evolution across languages, runtimes, and libraries.
+I owe a significant intellectual debt to the communities and individuals who
+proved these ideas long before PHP had a serious answer to them.
 
 I want to be completely honest: **Hibla would not exist without ReactPHP.**
 
@@ -277,7 +280,7 @@ If you have questions, ideas, want to be a maintainer, or just want to talk asyn
 - X: [@rcalicdan06](https://x.com/rcalicdan06)
 - Mastodon: [@rcalicdan@phpc.social](https://phpc.social/@rcalicdan)
 - Reddit: [u/rcalicdan](https://www.reddit.com/user/rcalicdan/)
-  
+
 ---
 
 ## Support & Sponsorship
