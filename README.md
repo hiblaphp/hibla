@@ -94,6 +94,7 @@ This `hiblaphp/hibla` meta-package requires the entire stack, allowing you to in
 | --- | --- |
 | [`hiblaphp/sql`](https://github.com/hiblaphp/sql) | Common SQL contracts, connection interfaces, and strict isolation levels. |
 | [`hiblaphp/mysql`](https://github.com/hiblaphp/mysql) | Pure-PHP MySQL binary protocol driver. Features lazy check-on-borrow pooling and deterministic LRU statement caching. |
+| [`hiblaphp/postgres`](https://github.com/hiblaphp/postgres) | High-performance, pure-PHP non-blocking PostgreSQL driver. Features transparent LRU statement caching, memory-safe server-side cursors, and resilient async Pub/Sub with auto-reconnection. |
 | [`hiblaphp/cache`](https://github.com/hiblaphp/cache) | Promise-based cache abstraction with LRU array implementations and eviction hooks. |
 
 ### CPU Parallelism
@@ -249,9 +250,9 @@ The architecture is stable, heavily stress-tested, and currently being dogfooded
 
 ### What's Next (Phase 2)
 
-- **`hiblaphp/postgres`:** An Async PostgreSQL client with cancellation guarantee and lazy check-on-borrow connection pooling.
+- **`hiblaphp/query-builder`:** A database-agnostic async query builder that sits on top of the MySQL and PostgreSQL drivers, with a fluent API and full support for parameterized queries, migrations, and pagination.
 - **`hiblaphp/http-server`:** A Fiber-native web server built directly on the Hibla Engine to serve HTTP/1.1 and HTTP/2 traffic without relying on external PHP SAPIs.
-- **`hiblaphp/query-builder`:** A database-agnostic async query builder that sits on top of the MySQL and PostgreSQL drivers, with a fluent API and full support for parameterized queries.
+
 
 ### On the Horizon (Phase 3)
 
