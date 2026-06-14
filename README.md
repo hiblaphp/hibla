@@ -23,7 +23,7 @@ The PHP ecosystem already has excellent async frameworks, but Hibla was built fr
 
 A common question when releasing a new tool is: *"Why not contribute to existing frameworks? Aren't you just fragmenting the async PHP ecosystem?"*
 
-Hibla is not an attempt to fragment the ecosystem. It is an exploration of a **generational leap**. Existing frameworks carry the necessary weight of a decade of backward compatibility. Hibla is an experiment in starting fresh: *What if I built an entire ecosystem from the ground up, exclusively for PHP 8.4+, assuming native Fibers, strict typing, and property hooks from day one?*
+Hibla is not an attempt to fragment the ecosystem. It is an experiment in starting fresh: *What if I built an entire ecosystem from the ground up, exclusively for PHP 8.4+, assuming native Fibers, strict typing, and property hooks from day one?*
 
 I believe that exploring entirely new architectures, like out-of-band database cancellation and Erlang-style process supervision, creates healthy competition that pushes the entire PHP language forward. Choice is a sign of a maturing ecosystem.
 
@@ -49,16 +49,13 @@ The goal is simple: async PHP should feel as productive and readable as the sync
 
 ## Acknowledgements
 
-Hibla did not emerge from a vacuum. It is the product of lessons drawn from
-a decade of async programming evolution across languages, runtimes, and libraries.
-I owe a significant intellectual debt to the communities and individuals who
-proved these ideas long before PHP had a serious answer to them.
+Hibla did not emerge from a vacuum. It is the product of lessons drawn from a decade of async programming evolution across languages, runtimes, and libraries. I owe a significant intellectual debt to the communities and individuals who proved these ideas long before PHP had a serious answer to them.
 
 I want to be completely honest: **Hibla would not exist without ReactPHP.**
 
 ReactPHP did not merely inspire Hibla. It *proved* that the entire premise was possible. At a time when the PHP community largely dismissed the idea of a non-blocking, event-driven PHP runtime as a curiosity or an anti-pattern, the ReactPHP team built a complete, production-grade async ecosystem from the ground up. The event loop, the promise model, the stream abstraction, the DNS resolution pipeline, the socket layer... ReactPHP had all of it, years before native Fibers existed. The architecture of `hiblaphp/event-loop`, `hiblaphp/socket`, `hiblaphp/dns`, and `hiblaphp/stream` is directly and consciously modeled after the design decisions of the ReactPHP core team. I studied their code, internalized their tradeoffs, and built on top of the conceptual foundation they laid. If you use Hibla and it feels right, a large portion of that credit belongs to them.
 
-**AmPHP** equally deserves deep acknowledgement, and not only for their async work. The structural Fiber concepts in `hiblaphp/async` were heavily shaped by AmPHP's pioneering work on coroutine-based concurrency in PHP. Their early exploration of generator-based async and their subsequent Fiber-first pivot gave the community an invaluable reference point. But beyond their library work, the Hibla project owes the AmPHP team a debt that extends to the PHP language itself. **Aaron Piotrowski** and **Niklas Keller**, both core AmPHP contributors, co-authored the [Fibers RFC (RFC 8208)](https://wiki.php.net/rfc/fibers) that landed in PHP 8.1. That RFC is not a footnote. It is the entire foundation that Hibla, and modern async PHP as a whole, is built on. The PHP community benefits from that work every single day, often without realizing where it came from. I realize it, and I want to say it plainly: **thank you, Aaron. Thank you, Niklas.**
+**AmPHP** equally deserves deep acknowledgement, and not only for their async work. The structural Fiber concepts in `hiblaphp/async` were heavily shaped by AmPHP's pioneering work on coroutine-based concurrency in PHP. Their early exploration of generator-based async and their subsequent Fiber-first pivot gave the community an invaluable reference point. But beyond their library work, the Hibla project owes the AmPHP team a debt that extends to the PHP language itself. **Aaron Piotrowski** and **Niklas Keller**, both core AmPHP contributors, co-authored the Fibers RFC (RFC 8208) that landed in PHP 8.1. That RFC is not a footnote. It is the entire foundation that Hibla, and modern async PHP as a whole, is built on. The PHP community benefits from that work every single day, often without realizing where it came from. I realize it, and I want to say it plainly: **thank you, Aaron. Thank you, Niklas.**
 
 Healthy ecosystems are built on standing on each other's shoulders. Hibla is my attempt to synthesize the best ideas from all of the above into something that feels native to modern PHP 8.4+. I genuinely encourage everyone using Hibla to star, contribute to, and support the ReactPHP and AmPHP projects.
 
@@ -93,6 +90,8 @@ This `hiblaphp/hibla` meta-package requires the entire stack, allowing you to in
 | Package | Description |
 | --- | --- |
 | [`hiblaphp/sql`](https://github.com/hiblaphp/sql) | Common SQL contracts, connection interfaces, and strict isolation levels. |
+| [`hiblaphp/query-builder`](https://github.com/hiblaphp/query-builder) | Non-blocking, fluent, and database-agnostic async query builder. |
+| [`hiblaphp/schema-manager`](https://github.com/hiblaphp/schema-manager) | Asynchronous migrations, seeders, schema squashing, and CLI database lifecycle manager. |
 | [`hiblaphp/mysql`](https://github.com/hiblaphp/mysql) | Pure-PHP MySQL binary protocol driver. Features lazy check-on-borrow pooling and deterministic LRU statement caching. |
 | [`hiblaphp/postgres`](https://github.com/hiblaphp/postgres) | High-performance, pure-PHP non-blocking PostgreSQL driver. Features transparent LRU statement caching, memory-safe server-side cursors, and resilient async Pub/Sub with auto-reconnection. |
 | [`hiblaphp/cache`](https://github.com/hiblaphp/cache) | Promise-based cache abstraction with LRU array implementations and eviction hooks. |
@@ -163,7 +162,7 @@ try {
     // 5. Save to MySQL safely in a transaction
     await(
         $db->transaction(function ($tx) use ($parsedData) {
-            foreach ($parsedData as $row) {
+            for ($parsedData as $row) {
                 await($tx->execute('INSERT INTO records (data) VALUES (?)', [$row]));
             }
         }),
@@ -186,7 +185,7 @@ $pool->shutdown();
 
 ---
 
-### Performance & The Road to an HTTP Server
+## Performance & The Road to an HTTP Server
 
 Because Hibla uses `SO_REUSEPORT` combined with Erlang-style `Parallel` worker pools, the OS kernel natively load-balances incoming TCP connections across all available CPU cores.
 
@@ -246,18 +245,22 @@ This benchmark was run to prove one thing: **the base engine has virtually zero 
 
 The Hibla ecosystem is currently in **Public Beta**.
 
-The architecture is stable, heavily stress-tested, and currently being dogfooded in production environments. I am gathering community feedback on the DX (Developer Experience) and API ergonomics before tagging a stable `1.0.0` release.
+The core engine is stable, heavily stress-tested, and currently being dogfooded in production environments. I am gathering community feedback on the DX (Developer Experience) and API ergonomics before tagging a stable `1.0.0` release.
 
-### What's Next (Phase 2)
+### Phase 2: Database Tooling
 
-- **`hiblaphp/query-builder`:** A database-agnostic async query builder that sits on top of the MySQL and PostgreSQL drivers, with a fluent API and full support for parameterized queries, migrations, and pagination.
-- **`hiblaphp/http-server`:** A Fiber-native web server built directly on the Hibla Engine to serve HTTP/1.1 and HTTP/2 traffic without relying on external PHP SAPIs.
+- **Asynchronous SQLite Client**: A non-blocking, multi-process SQLite driver. Because SQLite operates directly on the local filesystem, synchronous file I/O blocks the event loop. We are solving this by leveraging `hiblaphp/parallel` under the hood. SQLite queries will be dispatched asynchronously to a persistent, self-healing pool of background worker processes, keeping the main Fiber event loop 100% free and non-blocking.
 
+> This SQLite client will be fully integrated and released as part of Phase 2 before work begins on the HTTP server.*
 
-### On the Horizon (Phase 3)
+### Phase 3: High-Performance Web Server (Next)
 
-- **`hiblaphp/redis`**: A pure-PHP, non-blocking Redis client implementing the RESP3 protocol over the Hibla socket layer. It will support connection pooling, pipelining, Pub/Sub channels as async event emitters, and full `CancellationToken` propagation, bringing the same structured concurrency guarantees already found in `hiblaphp/mysql` to Redis workflows.
-- **`hiblaphp/websocket`**: A full-duplex, Fiber-native WebSocket implementation (RFC 6455) covering both client and server roles. The server side will integrate directly with `hiblaphp/http-server` for seamless HTTP-to-WebSocket upgrade handling, while the client will be built on top of `hiblaphp/http-client` and `hiblaphp/socket`. Planned features include per-message compression (RFC 7692), configurable frame fragmentation, automatic ping/pong heartbeating, and first-class `CancellationToken` support for graceful teardown.
+*   **`hiblaphp/http-server`**: A Fiber-native web server built directly on the Hibla Socket and Event Loop engine. It will natively serve HTTP/1.1 and HTTP/2 traffic with multi-core process clustering (SO_REUSEPORT) without relying on traditional PHP SAPI bottlenecks.
+
+### Phase 4: Cache, Key-Value & Communication (On the Horizon)
+
+*   **`hiblaphp/redis`**: A pure-PHP, non-blocking Redis client implementing the RESP3 protocol over the Hibla socket layer. It will support connection pooling, pipelining, Pub/Sub channels as async event emitters, and full `CancellationToken` propagation, bringing the same structured concurrency guarantees already found in `hiblaphp/mysql` to Redis workflows.
+*   **`hiblaphp/websocket`**: A full-duplex, Fiber-native WebSocket implementation (RFC 6455) covering both client and server roles. The server side will integrate directly with `hiblaphp/http-server` for seamless HTTP-to-WebSocket upgrade handling, while the client will be built on top of `hiblaphp/http-client` and `hiblaphp/socket`. Planned features include per-message compression (RFC 7692), configurable frame fragmentation, automatic ping/pong heartbeating, and first-class `CancellationToken` support for graceful teardown.
 
 ---
 
@@ -280,7 +283,6 @@ If you have questions, ideas, want to be a maintainer, or just want to talk asyn
 - Email: [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com)
 - X: [@rcalicdan06](https://x.com/rcalicdan06)
 - Mastodon: [@rcalicdan@phpc.social](https://phpc.social/@rcalicdan)
-- Reddit: [u/rcalicdan](https://www.reddit.com/user/rcalicdan/)
 
 ---
 
@@ -301,9 +303,7 @@ Every contribution, no matter the size, is genuinely appreciated.
 
 Hibla is proudly supported by the following companies and individuals. If your company uses Hibla in production or wants to support the async PHP ecosystem, reach out at [reymart.calicdan06@gmail.com](mailto:reymart.calicdan06@gmail.com) to discuss sponsorship.
 
-<a href="https://baldbold.eu/" title="Baldbold.eu">
-  <img src="arts/sponsors/baldbold.png" height="60" alt="Baldbold.eu" style="margin-right: 16px">
-</a>
+[![Baldbold.eu](arts/sponsors/baldbold.png)](https://baldbold.eu/ "Baldbold.eu")
 
 ## License
 
