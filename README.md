@@ -251,7 +251,7 @@ The core engine is stable, heavily stress-tested, and currently being dogfooded 
 
 - **Asynchronous SQLite Client**: A non-blocking, multi-process SQLite driver. Because SQLite operates directly on the local filesystem, synchronous file I/O blocks the event loop. We are solving this by leveraging `hiblaphp/parallel` under the hood. SQLite queries will be dispatched asynchronously to a persistent, self-healing pool of background worker processes, keeping the main Fiber event loop 100% free and non-blocking.
 
-> This SQLite client will be fully integrated and released as part of Phase 2 before work begins on the HTTP server.*
+> This SQLite client will be fully integrated and released as part of Phase 2 before work begins on the HTTP server.
 
 ### Phase 3: High-Performance Web Server (Next)
 
