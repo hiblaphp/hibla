@@ -30,6 +30,8 @@
         "hiblaphp/dns": "^1.0",
         "hiblaphp/http-client": "^1.0",
         "hiblaphp/mysql": "^1.0",
+        "hiblaphp/postgres": "^1.0",
+        "hiblaphp/sqlite":"^1.0",
         "hiblaphp/parallel": "^1.0",
         "hiblaphp/sql": "^1.0",
         "hiblaphp/sync": "^1.0",
