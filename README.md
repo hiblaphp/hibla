@@ -58,6 +58,7 @@ ReactPHP did not merely inspire Hibla. It *proved* that the entire premise was p
 **AmPHP** equally deserves deep acknowledgement, and not only for their async work. The structural Fiber concepts in `hiblaphp/async` were heavily shaped by AmPHP's pioneering work on coroutine-based concurrency in PHP. Their early exploration of generator-based async and their subsequent Fiber-first pivot gave the community an invaluable reference point. But beyond their library work, the Hibla project owes the AmPHP team a debt that extends to the PHP language itself. **Aaron Piotrowski** and **Niklas Keller**, both core AmPHP contributors, co-authored the Fibers RFC (RFC 8208) that landed in PHP 8.1. That RFC is not a footnote. It is the entire foundation that Hibla, and modern async PHP as a whole, is built on. The PHP community benefits from that work every single day, often without realizing where it came from. I realize it, and I want to say it plainly: **thank you, Aaron. Thank you, Niklas.**
 
 Healthy ecosystems are built on standing on each other's shoulders. Hibla is my attempt to synthesize the best ideas from all of the above into something that feels native to modern PHP 8.4+. I genuinely encourage everyone using Hibla to star, contribute to, and support the ReactPHP and AmPHP projects.
+
 ---
 
 ## The Ecosystem
